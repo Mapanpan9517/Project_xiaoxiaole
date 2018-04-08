@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<title>Document</title> 
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			overflow: hidden;
+		}
+		canvas{
+			border:1px solid #000;
+			display: block;
+			margin:0 auto;
+			box-sizing:border-box;
+		}
+		table{
+			position: absolute;
+			top:50px;
+			right:300px;
+			border-collapse:collapse;
+		}
+		table,tr,td{
+			border:1px solid #eee;
+			text-align:center;
+		}
+		th{
+			width:150px;
+			height:30px;
+		}
+		td{
+			width:150px;
+			height:20px;
+		}
+		button{
+			position:absolute;
+			height:40px;
+			width:100px;
+			left:200px;
+			top:100px;
+		}
+		button:nth-child(2){
+			top:140px;
+		}
+		button:nth-child(3){
+			top:180px;
+		}
+		button:nth-child(4){
+			top:220px;
+		}
+	</style>
+</head>
+<body>
+	<button onclick = "fun1()">炸弹</button>
+	<button onclick = "fun2()">提示</button>
+	<button onclick = "fun3()">重置</button>
+	<button onclick = "fun4()">自动</button>
+	<audio src="music/bg.ogg" autoplay  loop="loop" id ="bgmusic"></audio>	
+	<audio src="music/e1.mp3" id ="e1"></audio>
+	<audio src="music/e2.mp3" id ="e2"></audio>
+	<audio src="music/e3.mp3" id ="e3"></audio>
+	<audio src="music/e4.mp3" id ="e4"></audio>
+	<audio src="music/e5.mp3" id ="e5"></audio>
+	<audio src="music/e6.mp3" id ="e6"></audio>
+	<audio src="music/e7.mp3" id ="e7"></audio>
+	<audio src="music/e8.mp3" id ="e8"></audio>
+	<canvas id="mycanvas"></canvas>
+	<table id="mytable">
+        <tr>
+            <th>历史成绩</th>
+        </tr>
+    </table>
+	<script src="js/jquery.js"></script>
+	<script src = "js/underscore.js"></script>
+	<script src = "js/Game.js"></script>
+	<script src = "js/Sprite.js"></script>
+	<script src = "js/Map.js"></script>
+	<script>
+		var game = new Game();
+		document.getElementById("bgmusic").volume = 0.7;
+		function fun1(){
+			game.map.zhadan();
+		}
+		function fun2(){
+			game.map.tishi();
+		}
+		function fun3(){
+			game.map.chongzhi();
+		}
+		function fun4(){
+			game.iswaigua = !game.iswaigua;
+		}
+	</script>	
+</body>
+</html>
